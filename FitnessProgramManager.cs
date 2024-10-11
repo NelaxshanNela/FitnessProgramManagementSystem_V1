@@ -12,6 +12,12 @@ namespace FitnessProgramManagementSystem_V1
 
         public void CreateFitnessProgram()
         {
+            Console.WriteLine("Enter FitnessProgram type:");
+            Console.WriteLine("1. Indiviual Fitness Program");
+            Console.WriteLine("2. Group Fitness Program");
+            Console.Write("Choose an option: ");
+            int type = int.Parse(Console.ReadLine());
+
             Console.Write("Enter FitnessProgram ID: ");
             string programId = Console.ReadLine();
             Console.Write("Enter FitnessProgram Title: ");
@@ -21,9 +27,30 @@ namespace FitnessProgramManagementSystem_V1
             Console.Write("Enter FitnessProgram Price: ");
             string price = Console.ReadLine();
 
-            FitnessProgram program = new FitnessProgram(programId, title, duration, price);
-            fitnessProgramList.Add(program);
-            Console.WriteLine("FitnessProgram added successfully.");
+            if (type == 1)
+            {
+                Console.Write("Enter FitnessProgram SubscriptionType: ");
+                string SubscriptionType = Console.ReadLine();
+                Console.Write("Enter FitnessProgram needPersonalTrainer: ");
+                string needPersonalTrainer = Console.ReadLine();
+
+                IndividualFitnessProgram program = new IndividualFitnessProgram(programId, title, duration, price, SubscriptionType, needPersonalTrainer);
+                fitnessProgramList.Add(program);
+                Console.WriteLine("Indiviual FitnessProgram added successfully.");
+
+            }
+            else
+            {
+                Console.Write("Enter FitnessProgram Schedule: ");
+                string Schedule = Console.ReadLine();
+                Console.Write("Enter FitnessProgram GroupCapacity: ");
+                string GroupCapacity = Console.ReadLine();
+
+                GroupFitnessProgram program = new GroupFitnessProgram(programId, title, duration, price, Schedule, GroupCapacity);
+                fitnessProgramList.Add(program);
+                Console.WriteLine("Group FitnessProgram added successfully.");
+            }
+
         }
 
         public void ReadFitnessPrograms()
@@ -50,6 +77,13 @@ namespace FitnessProgramManagementSystem_V1
             if (findProgram != null)
             {
                 fitnessProgramList.Remove(findProgram);
+
+                Console.WriteLine("Enter FitnessProgram type:");
+                Console.WriteLine("1. Indiviual Fitness Program");
+                Console.WriteLine("2. Group Fitness Program");
+                Console.Write("Choose an option: ");
+                int type = int.Parse(Console.ReadLine());
+
                 Console.Write("Enter FitnessProgram Title: ");
                 string title = Console.ReadLine();
                 Console.Write("Enter FitnessProgram Duration: ");
@@ -57,9 +91,29 @@ namespace FitnessProgramManagementSystem_V1
                 Console.Write("Enter FitnessProgram Price: ");
                 string price = Console.ReadLine();
 
-                FitnessProgram program = new FitnessProgram(programId, title, duration, price);
-                fitnessProgramList.Add(program);
-                Console.WriteLine("FitnessProgram updated successfully");
+                if (type == 1)
+                {
+                    Console.Write("Enter FitnessProgram SubscriptionType: ");
+                    string SubscriptionType = Console.ReadLine();
+                    Console.Write("Enter FitnessProgram needPersonalTrainer: ");
+                    string needPersonalTrainer = Console.ReadLine();
+
+                    IndividualFitnessProgram program = new IndividualFitnessProgram(programId, title, duration, price, SubscriptionType, needPersonalTrainer);
+                    fitnessProgramList.Add(program);
+                    Console.WriteLine("Indiviual FitnessProgram added successfully.");
+
+                }
+                else
+                {
+                    Console.Write("Enter FitnessProgram Schedule: ");
+                    string Schedule = Console.ReadLine();
+                    Console.Write("Enter FitnessProgram GroupCapacity: ");
+                    string GroupCapacity = Console.ReadLine();
+
+                    GroupFitnessProgram program = new GroupFitnessProgram(programId, title, duration, price, Schedule, GroupCapacity);
+                    fitnessProgramList.Add(program);
+                    Console.WriteLine("Group FitnessProgram added successfully.");
+                }
             }
             else
             {

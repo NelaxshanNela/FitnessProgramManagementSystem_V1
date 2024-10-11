@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FitnessProgramManagementSystem_V1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a42ad87895b3787b684fdb74ad216243c5138798")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6423a4e8d6d18e5caa96fb5033184794a2bbf6e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("FitnessProgramManagementSystem_V1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FitnessProgramManagementSystem_V1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,9 +9,9 @@ namespace FitnessProgramManagementSystem_V1
     internal class FitnessProgram
     {
         public string fitnessProgramId { get; set; }
-        private string title { get; set; }
-        private string duration { get; set; }
-        private string price { get; set; }
+        public string title { get; set; }
+        public string duration { get; set; }
+        public string price { get; set; }
 
         public FitnessProgram(string fitnessProgramId, string title, string duration, string price)
         {
@@ -21,7 +21,13 @@ namespace FitnessProgramManagementSystem_V1
             this.price = price;
 
         }
+        public FitnessProgram() { }
         public override string ToString()
+        {
+            return ($"fitnessProgramId: {fitnessProgramId}, Title:{title}, Duration: {duration}, Price: {price}");
+        }
+
+        public virtual string DisplayFitnessProgramInfo()
         {
             return ($"fitnessProgramId: {fitnessProgramId}, Title:{title}, Duration: {duration}, Price: {price}");
         }

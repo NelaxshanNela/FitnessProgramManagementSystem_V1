@@ -8,7 +8,7 @@ namespace FitnessProgramManagementSystem_V1
 {
     internal class FitnessProgram
     {
-        private string fitnessProgramId { get; set; }
+        public string fitnessProgramId { get; set; }
         private string title { get; set; }
         private string duration { get; set; }
         private string price { get; set; }

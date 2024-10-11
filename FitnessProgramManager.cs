@@ -24,8 +24,8 @@ namespace FitnessProgramManagementSystem_V1
             string title = Console.ReadLine();
             Console.Write("Enter FitnessProgram Duration: ");
             string duration = Console.ReadLine();
-            Console.Write("Enter FitnessProgram Price: ");
-            string price = Console.ReadLine();
+
+            string price = ValidateFitnessProgramPrice();
 
             if (type == 1)
             {
@@ -88,8 +88,8 @@ namespace FitnessProgramManagementSystem_V1
                 string title = Console.ReadLine();
                 Console.Write("Enter FitnessProgram Duration: ");
                 string duration = Console.ReadLine();
-                Console.Write("Enter FitnessProgram Price: ");
-                string price = Console.ReadLine();
+
+                string price = ValidateFitnessProgramPrice();
 
                 if (type == 1)
                 {
@@ -135,6 +135,23 @@ namespace FitnessProgramManagementSystem_V1
             {
                 Console.WriteLine("Invalid ID");
             }
+        }
+
+        public string ValidateFitnessProgramPrice()
+        {
+            int validatePrice = 0;
+            Console.Write("Enter FitnessProgram Price: ");
+            int price = int.Parse(Console.ReadLine());
+
+            if (price < 0)
+            {
+                Console.WriteLine("Enter positive value");
+            }
+            else
+            {
+                validatePrice = price;
+            }
+            return validatePrice.ToString();
         }
     }
 }
